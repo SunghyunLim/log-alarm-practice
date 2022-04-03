@@ -6,3 +6,4 @@
 ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:71 - no applicable action for [springProperty], current ElementPath is [[configuration][springProperty]]
 ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:72 - no applicable action for [springProperty], current ElementPath is [[configuration][springProperty]] 
 ERROR in ch.qos.logback.core.joran.spi.Interpreter@4:73 - no applicable action for [springProfile], current ElementPath is [[configuration][springProfile]]
+ERROR 뭔가 저장하려 할 때 문제가 발생했습니다. 원인 파악이 필요하겠군요.
