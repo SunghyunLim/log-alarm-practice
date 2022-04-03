@@ -15,7 +15,7 @@
 ``` DD_AGENT_MAJOR_VERSION=7 DD_API_KEY=<<key>> DD_SITE="datadoghq.com" bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_mac_os.sh)" ```
  - 자세한 사항은 https://docs.datadoghq.com/agent/ 를 참조하세요.
 ### 4. 환경변수 변경
- - /opt/datadog-agent/etc/conf.d/datadog.yaml파일을 찾아서 다음의 내용을 추가 합니다.
+ - /opt/datadog-agent/etc/datadog.yaml파일을 찾아서 다음의 내용을 추가 합니다.
    . 835 라인을 찾아 
  ``` logs_enabled: false => logs_enabled: true ```
  로 변경하고 저장
