@@ -12,18 +12,20 @@
 ## 미션 배경 설명
 - 인기 많은 서비스는 여러대의 서버를 두고 운영합니다. 우리는 인기 많은 서비스가 될거니까, 여러대의 서버가 필요해요!
 ![여러대 서버예시](https://docs.oracle.com/it/solutions/design-ha/img/public-lb.png)
-- 이번 미션에서 여러분의 local PC는 우리서비스의 여러대의 서버 중 하나의 서버 instance의 역할을 한다고 생각해주세요!
-- 제공되는 미션 repo에 있는 'mock-server.py'를 실행하면, logList에 로그들이 랜덤하게 로그파일에 생성될 것입니다. (cf.실제 서비스에서도 서버를 실행하면 많은 로그들이 로그파일에 쌓이기 시작합니다.)
+- 이번 미션에서 여러분의 local PC는 우리서비스의 여러대의 서버 중 하나의 서버 instance의 역할을 한다고 생각해주세요!    
+(위 그림에서 VM1, VM2, VM3 이 각자의 local PC와 같은 역할이에요.)
+- 제공되는 미션 repo에 있는 'mock-server.py'를 실행하면, logList에 로그들이 랜덤하게 로그파일에 생성될 것입니다.    
+(cf.실제 서비스에서도 서버를 실행하면 많은 로그들이 로그파일에 쌓이기 시작합니다.)
 - 우리는 이 미션에서 datadog(https://www.datadoghq.com/) 이라는 상용 중앙 로그 시스템의 도움을 받을 거에요! datadog은 log를 중앙서버에 수집해주는 고마운 친구입니다. 
 
 ## 미션 준비물
-1. python 3
+**1. python 3**
 - python 버전 3이상이 필요해요!
 - mac OS라면, brew를 통해 설치하는 것을 추천합니다.
-- python3이 설치되어있는지 터미널에서 확인해볼까요?
+- python3이 설치되어있는지 터미널에서 확인해볼까요?     
 Hint : `python3 --version` 
 
-2. datadog agent 설치
+**2. datadog agent 설치**
 - mac OS  
 아래 명령어를 통해 설치 
 ```
@@ -36,14 +38,15 @@ DD_AGENT_MAJOR_VERSION=7 DD_API_KEY={제공되는 key} DD_SITE="datadoghq.com" b
 // todo windows에서도 설치만 하면, 이후 환경변수 설정시 path가 똑같을까? 확인필요.
 https://docs.datadoghq.com/agent/basic_agent_usage/windows/?tab=gui
 
-3. DD_API_KEY
+**3. DD_API_KEY**
+-강의에서 제공 예정
+**4. datadog ID, PASSWORD**
+-강의에서 제공 예정
 
-4. datadog ID, PASSWORD
-
-### P.S.
-- python 문법을 몰라도 됩니다. 걱정마세요🥳
-- datadog 이 뭔지, 어떻게 사용하는지 잘 몰라도 됩니다. 걱정마세요🥳
-
+### P.S : Don't Worry!
+- 이 미션을 수행하기 위해서 python 문법을 몰라도 됩니다. 걱정마세요🥳
+- 이 미션을 수행하기 위해서 datadog 이 뭔지, 어떻게 사용하는지 잘 몰라도 됩니다. 걱정마세요🥳
+----------
 ## 미션 1. 나의 local 환경에서, log를 확인하기
 ### step1. git clone
 - 이 프로젝트를 clone 합니다.
@@ -105,7 +108,7 @@ datadog-agent run
 ### step4. mock-server 실행
 - python3 mock-server.py 를 실행합니다.
   - 미션1.step2를 참고하세요.
-
+----------
 ## 미션3. datadog을 활용해 나의 log 확인하기
 - datadog login
 `https://app.datadoghq.com/account/login`
@@ -114,7 +117,7 @@ datadog-agent run
 
 - 수 많은 log중에서 나의 log만 찾아낼 수 있다면, 미션 성공!
  
-
+----------
 # datadog 삭제
 다음의 절차에 따라 진행하세요.
 ```
