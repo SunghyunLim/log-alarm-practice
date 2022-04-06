@@ -39,9 +39,10 @@ DD_AGENT_MAJOR_VERSION=7 DD_API_KEY={제공되는 key} DD_SITE="datadoghq.com" b
 https://docs.datadoghq.com/agent/basic_agent_usage/windows/?tab=gui
 
 **3. DD_API_KEY**
--강의에서 제공 예정
+- 강의에서 제공 예정  
+
 **4. datadog ID, PASSWORD**
--강의에서 제공 예정
+- 강의에서 제공 예정
 
 ### P.S : Don't Worry!
 - 이 미션을 수행하기 위해서 python 문법을 몰라도 됩니다. 걱정마세요🥳
@@ -68,8 +69,11 @@ python3 mock-server.py
 
 ### step1. datadog 환경변수 변경
 - /opt/datadog-agent/etc/datadog.yaml파일을 찾기
-- '/opt/datadog-agent/etc/datadog.yaml'파일의 835번째 라인을 찾고, 아래와 같이 변경하고 저장하기
- ``` logs_enabled: false => logs_enabled: true ```
+- '/opt/datadog-agent/etc/datadog.yaml'파일의 835번째 라인을 찾고, 아래와 같이 변경하고 저장하기       
+ ``` logs_enabled: true ```  
+ 
+변경 전 -> 변경 후
+ ``` logs_enabled: false -> logs_enabled: true ```
 
 ### step2. log에 표시될 나만의 서비스 이름 만들기
 - /opt/datadog-agent/etc/conf.d/python.d 디렉토리를 생성하기
@@ -82,7 +86,7 @@ python3 mock-server.py
     source: python
 ```
 
-Example
+'conf.yaml' Example
 ```
 logs:
  - type: file
