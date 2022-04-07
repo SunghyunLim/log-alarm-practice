@@ -63,6 +63,7 @@ python3 mock-server.py
 - 아래 스크린샷처럼 로그가 프린트 되면 미션 1 성공!
 ![성공결과](https://github.com/SunghyunLim/log-alarm-practice/blob/main/img/mock-server.png)
 
+- 구조를 살펴보고,logList.txt에 로그를 추가해보세요. 
 ----
 ## Q. 지금 상태에서 우리 팀의 다른 서버(우리 팀원)의 로그를 함께 보려면 어떻게 해야 할까요?
 ----
