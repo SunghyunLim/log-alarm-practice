@@ -4,7 +4,8 @@
 ```
 우리회사가 온라인으로 콘서트 굿즈를 파는 서비스를 시작한다. 
 지난 몇 개월동안 열심히 개발했고 최종 QA도 마쳤고, 지난주에 배포도 되어있다. 
-드디어 오늘 오후에 BTS 콘서트가 있다! 
+모든 것이 다 완벽하다.
+드디어 오늘 저녁 아홉시에 BTS 콘서트가 있다! 펜들과 함께하는 우리 굿즈 서비스!! 
 그런데, CTO와 팀장님들은 해외출장을 갔다ㅠㅠ그들은 비행기 안에 있다.
 이제 우리끼리 오늘 오후에 서비스를 오픈해야 하는데...이제, 우리 팀 뭘 해야 하지?
 ```
@@ -31,7 +32,7 @@ Hint : `python3 --version`
 ```
 DD_AGENT_MAJOR_VERSION=7 DD_API_KEY={제공되는 key} DD_SITE="datadoghq.com" bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_mac_os.sh)"
 ```
-// todo 설치 성공시 어떤결과화면인지 추가
+![성공결과](https://github.com/SunghyunLim/log-alarm-practice/blob/main/img/result.png)
 
 - windows 
 설치시 필요한 API key는 별도로 제공 필요
@@ -63,7 +64,7 @@ python3 mock-server.py
 // todo 성공시 이미지 추가
 
 ----
-## Q. 지금 상태에서 다른 서버(팀원)의 로그를 볼 수 있나요?
+## Q. 지금 상태에서 다른 서버(우리 팀원)의 로그를 볼 수 있나요? 다른 팀의 서버를 빼고 우리 팀만의 서버를 보고싶다면 어떻게 해야 할까요?
 ----
 ## 미션 2. 다른 서버의 로그도 보기위해서, 로그를 중앙서버로 보냅시다. datadog의 도움을 받을 거에요.
 
