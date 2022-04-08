@@ -26,7 +26,15 @@
 - python3이 설치되어있는지 터미널에서 확인해볼까요?     
 Hint : `python3 --version` 
 
-**2. datadog agent 설치**
+**2. DD_API_KEY**
+- 강의에서 제공 예정
+- datadog agent 설치할 때 필요해요. {제공되는 key}를 바꿔치기 하기 합니다.
+
+**3. datadog ID, PASSWORD**
+- 강의에서 제공 예정
+- datadog 웹 페이지에 가서 모니터링할 때 써요.
+
+**4. datadog agent 설치**
 - mac OS  
 아래 명령어를 통해 설치 
 ```
@@ -39,17 +47,13 @@ DD_AGENT_MAJOR_VERSION=7 DD_API_KEY={제공되는 key} DD_SITE="datadoghq.com" b
 // todo windows에서도 설치만 하면, 이후 환경변수 설정시 path가 똑같을까? 확인필요.
 https://docs.datadoghq.com/agent/basic_agent_usage/windows/?tab=gui
 
-**3. DD_API_KEY**
-- 강의에서 제공 예정  
-
-**4. datadog ID, PASSWORD**
-- 강의에서 제공 예정
-
 ### P.S 1 : Don't Worry!
 - 이 미션을 수행하기 위해서 python 문법을 몰라도 됩니다. 걱정마세요🥳
 - 이 미션을 수행하기 위해서 datadog 이 뭔지, 어떻게 사용하는지 잘 몰라도 됩니다. 걱정마세요🥳
-### P.S 2 : Don't Worry!
+
+### P.S 2 : Hint
 - 이번에 알게 되었어요. terminal에서 vscode 실행하기 : https://code.visualstudio.com/docs/setup/mac 
+
 ----------
 ## 미션 1. 나의 local 환경에서, log를 확인하기
 ### step1. git clone
@@ -124,16 +128,16 @@ datadog-agent run
 - 로그인 후, 좌측 메뉴 중 Logs > Search
 
 - 수 많은 log중에서 나의 log만 찾아낼 수 있다면, 미션 성공!
-----
-## Q. 여러 로그가 섞였을 때 우리 팀의 다른 서버(우리 팀원)의 로그를 보려면 어떻게 해야 할까요?
-----
+
 ## 미션4. 우리팀의 log를 확인하기
-- mock-server.py, datadog agent, datadog 서버 등을 활용하여 우리 팀의 서버에서 발생하는 로그를 필터링해보세요.
+- 종종 우리 팀의 log, 특정 서비스의 log를 봐야 할 때가 있어요. 
+- 우리 팀의 서버에서 발생하는 로그만 필터링해보세요.
+- 이번 미션에서는 팀에서 전략을 짜서 함께 적용해보세요.
 
 <심화학습>
 ## 미션5. 찾기전에 알려주기
 - 자, 이제 수많은 로그가 발생하고 있습니다. 여기에서 error가 1분당 10건 이상 발생하는지 어떻게 알 수 있을까요?
-- 이 정보를 내가 잘 받을 수 있도록 alarm으로 한번 받아보세요.(첫 번째 성공하신 분에게는 뭔가 좋은 것을 받지 않을까요?)
+- 이 정보를 내가 잘 받을 수 있도록 alarm으로 한번 받아보세요.(첫 번째 성공하신 분에게는 뭔가 좋은 선물을 드리지 않을까요?)
 
 ----------
 # datadog 삭제
