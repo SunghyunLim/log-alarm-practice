@@ -28,7 +28,7 @@ Hint : `python3 --version`
 
 **2. DD_API_KEY**
 - 강의에서 제공 예정
-- datadog agent 설치할 때 필요해요. {제공되는 key}를 바꿔치기 하기 합니다.
+- datadog agent 설치할 때 필요해요. {제공되는 key}를 바꿔치기 합니다.
 
 **3. datadog ID, PASSWORD**
 - 강의에서 제공 예정
@@ -37,14 +37,15 @@ Hint : `python3 --version`
 **4. datadog agent 설치**
 - mac OS  
 아래 명령어를 통해 설치 
-```
+```sh
 DD_AGENT_MAJOR_VERSION=7 DD_API_KEY={제공되는 key} DD_SITE="datadoghq.com" bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_mac_os.sh)"
 ```
 ![성공결과](https://github.com/SunghyunLim/log-alarm-practice/blob/main/img/result.png)
 
 - windows 
-설치시 필요한 API key는 별도로 제공 필요
-// todo windows에서도 설치만 하면, 이후 환경변수 설정시 path가 똑같을까? 확인필요.
+설치시 필요한 API key는 별도로 제공 필요.    
+
+// todo: windows에서도 설치만 하면, 이후 환경변수 설정시 path가 똑같을까? 확인필요.
 https://docs.datadoghq.com/agent/basic_agent_usage/windows/?tab=gui
 
 ### P.S 1 : Don't Worry!
@@ -58,35 +59,40 @@ https://docs.datadoghq.com/agent/basic_agent_usage/windows/?tab=gui
 ## 미션 1. 나의 local 환경에서, log를 확인하기
 ### step1. git clone
 - 이 프로젝트를 clone 합니다.
-- clone한 프로젝트가 위치한 path를 메모해두세요. 이후에 나올 미션에서 사용됩니다.
-Hint! `pwd`     
+- clone한 프로젝트가 위치한 path를 메모해두세요. 이후에 나올 미션에서 사용됩니다.     
+Hint: `pwd`     
 
 ### step2. 'mock-server.py'를 실행하기
 - clone한 프로젝트에서 아래 명령어 실행
-```
+```sh
 python3 mock-server.py
 ```
 - 아래 스크린샷처럼 로그가 프린트 되면 미션 1 성공!
 ![성공결과](https://github.com/SunghyunLim/log-alarm-practice/blob/main/img/mock-server.png)
 
-- 구조를 살펴보고,logList.txt에 로그를 추가해보세요. 
+- 구조를 살펴보고, `logList.txt` 파일에 로그를 추가해보세요. 
 ----
+
 ## Q. 지금 상태에서 우리 팀의 다른 서버(우리 팀원)의 로그를 함께 보려면 어떻게 해야 할까요?
+
 ----
 ## 미션 2. 다른 서버의 로그도 보기위해서, 로그를 중앙서버로 보냅시다. datadog의 도움을 받을 거에요.
 
 ### step1. datadog 환경변수 변경
-- /opt/datadog-agent/etc/datadog.yaml파일을 찾기
-- '/opt/datadog-agent/etc/datadog.yaml'파일의 835번째 라인을 찾고, 아래와 같이 변경하고 저장하기       
- ``` logs_enabled: true ```  
+- terminal에서 `/opt/datadog-agent/etc/datadog.yaml` 파일을 찾기
+- `/opt/datadog-agent/etc/datadog.yaml`파일에서 835번째 라인을 찾고, 아래와 같이 변경하고 저장하기       
+ ```.yaml
+ logs_enabled: true 
+ ```  
  
-변경 전 -> 변경 후
- ``` logs_enabled: false -> logs_enabled: true ```
+- 변경 전 ➡️ 변경 후
+ `logs_enabled: false` -> `logs_enabled: true `
+![image](https://user-images.githubusercontent.com/11879870/162576080-973d98ee-1a53-48d5-9b5c-414ea80b4204.png)
 
 ### step2. log에 표시될 나만의 서비스 이름 만들기
-- /opt/datadog-agent/etc/conf.d/python.d 디렉토리를 생성하기
-- 위에서 생성한 디렉토리에 'conf.yaml'파일을 생성해서 아래 내용을 추가하고 저장합니다.
- ```
+- `/opt/datadog-agent/etc/conf.d/python.d` 디렉토리를 생성하기
+- 위에서 생성한 디렉토리에 `conf.yaml` 파일을 생성해서 아래 내용을 추가하고 저장합니다.
+ ```.yaml
  logs:
   - type: file
     path: {git clone한 위치}/logs/*.log
@@ -95,7 +101,7 @@ python3 mock-server.py
 ```
 
 'conf.yaml' Example
-```
+```.yaml
 logs:
  - type: file
    path: /Users/whale/solar/log-alarm-practice/logs/*.log
@@ -105,24 +111,26 @@ logs:
 
 ### step3. datadog-agent를 재시작 합니다.
 - datadog-agent 종료
-```
+```sh
 datadog-agent stop
 ```
 
 - datadog-agent 시작
-```
+```sh
 datadog-agent run
 ```
 - datadog-agent가 정상적으로 시작되면, 성공!
   - datadog-agent가 실행되면, 로그파일을 중앙서버로 전송할 수 있습니다!
-// todo 정상적으로 시작되었을때 스샷 추가
+![성공스샷](https://user-images.githubusercontent.com/11879870/162575970-9fb71cd4-c904-4e70-b341-9a13bb331dc0.png)
+
 
 ### step4. mock-server 실행
-- python3 mock-server.py 를 실행합니다.
+- python3 `mock-server.py` 를 실행합니다.
   - 미션1.step2를 참고하세요.
+  
 ----------
 ## 미션3. datadog을 활용해 나의 log 확인하기
-- datadog login
+- datadog login 하기
 `https://app.datadoghq.com/account/login`
 
 - 로그인 후, 좌측 메뉴 중 Logs > Search
@@ -143,7 +151,7 @@ datadog-agent run
 # datadog 삭제
 이제 모든 작업을 끝냈으면 다시 처음으로 돌아가야죠.
 다음의 절차에 따라 진행하세요.
-```
+```console
 sudo rm -rf /opt/datadog-agent
 sudo rm -rf /usr/local/bin/datadog-agent
 sudo rm -rf ~/.datadog-agent/** #to remove broken symlinks
