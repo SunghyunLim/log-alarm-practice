@@ -43,10 +43,7 @@ DD_AGENT_MAJOR_VERSION=7 DD_API_KEY={제공되는 key} DD_SITE="datadoghq.com" b
 ![성공결과](https://github.com/SunghyunLim/log-alarm-practice/blob/main/img/result.png)
 
 - windows 
-설치시 필요한 API key는 별도로 제공 필요.    
-
-// todo: windows에서도 설치만 하면, 이후 환경변수 설정시 path가 똑같을까? 확인필요.
-https://docs.datadoghq.com/agent/basic_agent_usage/windows/?tab=gui
+다음 문서를 참조하세요. - https://app.datadoghq.com/account/settings#agent/windows
 
 ### P.S : Don't Worry!
 - 이 미션을 수행하기 위해서 python 문법을 몰라도 됩니다. 걱정마세요🥳
@@ -68,6 +65,15 @@ python3 mock-server.py
 ![성공결과](https://github.com/SunghyunLim/log-alarm-practice/blob/main/img/mock-server.png)
 
 - 구조를 살펴보고, `logList.txt` 파일에 로그를 추가해보세요. 
+-  예를 들어, 
+```
+'에러상황'
+- 사용자가 하루에 주문할 수 있는 횟수는 최대 5회인데, 이 사용자는 6번째로 주문을 요청해서 주문에 실패했습니다.
+- 사용자 ID는 'army123' , 계정 식별자는 'AB1234' 입니다.
+- 주문을 요청한 시각은 '2022-04-11 11:00:00'입니다.
+- 주문번호는 'BTS807988' 입니다.
+- 최대 주문횟수 초과 에러코드는 서버 코드에서 'OVER_MAX_ORDER_COUNTS' 로 정의되어있습니다.
+```
 ----
 
 ## Q. 지금 상태에서 우리 팀의 다른 서버(우리 팀원)의 로그를 함께 보려면 어떻게 해야 할까요?
