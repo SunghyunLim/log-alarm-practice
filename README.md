@@ -28,7 +28,7 @@ Hint : `python3 --version`
 
 **2. DD_API_KEY**
 - 강의에서 제공 예정
-- datadog agent 설치할 때 필요해요. {제공되는 key}를 바꿔치기 합니다.
+- datadog agent 설치할 때 필요해요. {제공되는 key}를 바꿔치기 합니다. 
 
 **3. datadog ID, PASSWORD**
 - 강의에서 제공 예정
@@ -111,6 +111,7 @@ logs:
    service: solar
    source: python
 ```
+- 참조: windows 환경에서는 https://docs.datadoghq.com/agent/basic_agent_usage/windows/?tab=gui#command-line 를 참조해서 진행해주세요.
 
 ### step3. datadog-agent를 재시작 합니다.
 - datadog-agent 종료
