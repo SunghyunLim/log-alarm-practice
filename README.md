@@ -48,12 +48,9 @@ DD_AGENT_MAJOR_VERSION=7 DD_API_KEY={제공되는 key} DD_SITE="datadoghq.com" b
 // todo: windows에서도 설치만 하면, 이후 환경변수 설정시 path가 똑같을까? 확인필요.
 https://docs.datadoghq.com/agent/basic_agent_usage/windows/?tab=gui
 
-### P.S 1 : Don't Worry!
+### P.S : Don't Worry!
 - 이 미션을 수행하기 위해서 python 문법을 몰라도 됩니다. 걱정마세요🥳
 - 이 미션을 수행하기 위해서 datadog 이 뭔지, 어떻게 사용하는지 잘 몰라도 됩니다. 걱정마세요🥳
-
-### P.S 2 : Hint
-- 이번에 알게 되었어요. terminal에서 vscode 실행하기 : https://code.visualstudio.com/docs/setup/mac 
 
 ----------
 ## 미션 1. 나의 local 환경에서, log를 확인하기
