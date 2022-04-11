@@ -22,7 +22,7 @@
 ## 미션 준비물
 **1. python 3**
 - python 버전 3이상이 필요해요!
-- mac OS라면, brew를 통해 설치하는 것을 추천합니다.
+- mac OS라면, brew를 통해 설치하는 것을 추천합니다.    
 Hint : `brew install python3`
 - python3이 설치되어있는지 터미널에서 확인해볼까요?     
 Hint : `python3 --version` 
